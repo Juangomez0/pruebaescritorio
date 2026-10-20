@@ -22,6 +22,7 @@ namespace pruebaescritorio
             textNombre.Text = string.Empty; // accede al contenido nombre y el string representa una cadena vacia
             textEdad.Text = string.Empty; // cuando se ejecuta limpiar ambos campos quedan vacios. tambien el metodo se utiliza cuanod se guarda una PER queda limpo el formulario
             textCorreo.Text = string.Empty; // limpia tambien el campo del correo
+            textDireccion.Text = string.Empty; 
         }
 
         private void textEdad_KeyPress(object sender, KeyPressEventArgs e) // KeyPress	Evento que se genera cuando se pulsa una tecla que produce un carácter.
@@ -74,6 +75,7 @@ namespace pruebaescritorio
             objetoPersona.Nombre = textNombre.Text.Trim();  // asigna el nombre.
             objetoPersona.Edad = int.Parse(textEdad.Text);
             objetoPersona.Correo = textCorreo.Text.Trim();
+            objetoPersona.Direccion = textDireccion.Text.Trim();
 
             listaPersona.Add(objetoPersona); //agrega el objeto a la lista.
 
@@ -150,6 +152,14 @@ namespace pruebaescritorio
                 MessageBox.Show("Por favor, ingrese un correo válido.");
                 textCorreo.Focus();
                 textCorreo.SelectAll();
+                return false;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(textDireccion.Text)) //comprueba si el texto es nulo, está vacío o contiene solamente espacios y puntos
+            {
+                MessageBox.Show("Por favor, ingrese la dirección.");
+                textDireccion.Focus();                
                 return false;
             }
 

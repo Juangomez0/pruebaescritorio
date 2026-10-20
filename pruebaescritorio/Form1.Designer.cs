@@ -40,6 +40,8 @@
             textCorreo = new TextBox();
             labelCorreo = new Label();
             grupoDatos = new GroupBox();
+            textDireccion = new TextBox();
+            lblDireccion = new Label();
             ((System.ComponentModel.ISupportInitialize)GridDatos).BeginInit();
             grupoEntradDatos.SuspendLayout();
             grupoDatos.SuspendLayout();
@@ -122,6 +124,8 @@
             // 
             // grupoEntradDatos
             // 
+            grupoEntradDatos.Controls.Add(textDireccion);
+            grupoEntradDatos.Controls.Add(lblDireccion);
             grupoEntradDatos.Controls.Add(textCorreo);
             grupoEntradDatos.Controls.Add(labelCorreo);
             grupoEntradDatos.Controls.Add(botonCerrar);
@@ -167,6 +171,22 @@
             grupoDatos.TabStop = false;
             grupoDatos.Text = "Datos registrados";
             // 
+            // textDireccion
+            // 
+            textDireccion.Location = new Point(106, 212);
+            textDireccion.Name = "textDireccion";
+            textDireccion.Size = new Size(368, 31);
+            textDireccion.TabIndex = 11;
+            // 
+            // lblDireccion
+            // 
+            lblDireccion.AutoSize = true;
+            lblDireccion.Location = new Point(15, 215);
+            lblDireccion.Name = "lblDireccion";
+            lblDireccion.Size = new Size(85, 25);
+            lblDireccion.TabIndex = 10;
+            lblDireccion.Text = "Dirección";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -197,5 +217,7 @@
         private GroupBox grupoDatos;
         private Label labelCorreo;
         private TextBox textCorreo;
+        private TextBox textDireccion;
+        private Label lblDireccion;
     }
 }
